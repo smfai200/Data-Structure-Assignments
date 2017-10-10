@@ -1,0 +1,21 @@
+package javaapplication6;
+import java.io.*;
+
+public class JavaApplication6 {
+
+    public static void main(String[] args) throws IOException {
+        int t1=1, t2=1, nextterm;
+        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("\n ENTER Number to Find Fibbonacci Series: ");
+        int num = Integer.parseInt(input.readLine());
+        System.out.println("Series is: ");
+        for (int loop=1; loop<=num; loop++){
+            System.out.print(" " + t1);
+            nextterm = t1 + t2;
+            t1 = t2;
+            t2 = nextterm; 
+        }
+        System.out.println("\n ");
+    }
+    
+}

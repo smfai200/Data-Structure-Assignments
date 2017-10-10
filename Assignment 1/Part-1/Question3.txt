@@ -1,0 +1,45 @@
+package question3;
+
+public class Question3 {
+
+    public static void main(String[] args) {
+        int array[][] = new int[5][5];
+        int min[] = new int[5];
+        int max[] = new int[5];
+        int swapmin, swapmax;
+        Question3 obj = new Question3();
+        obj.maxmin(array,0); //ARRAY IS PASSED BY REFERANCE
+        obj.maxmin(array,1);
+        
+    }
+    public void maxmin(int arr[][], int count){
+        //FOR LOOP IS MULTI PURPOSE USED WITH THE HELP OF IF CONDITIONS
+        int a = arr[0][0];
+        int min[] = {a,a,a,a,a};
+        int max[] = {0,0,0,0,0};
+        for (int loop=0; loop <arr.length; loop++){
+            if(count==0)
+            System.out.print("{ "); //FOR INITILIZATION-1
+            for (int jloop=0; jloop <arr[loop].length; jloop++){
+                if(count == 0){ //FOR INITILIZATION-1
+                arr[loop][jloop] = (int)(1+Math.random()*100);
+                System.out.print(" " + arr[loop][jloop]);
+                }else{ //FOR FINDING MIN AND MAX-2
+                if(arr[loop][jloop] > max[loop]){
+                    max[loop] = arr[loop][jloop];
+                } //FOR FINDING MIN AND MAX-2
+                if (jloop <=3 && arr[jloop][loop] < min[loop]){
+                    min[loop] = arr[jloop][loop];
+                }
+                }
+            }
+          if(count == 1){ //FOR FINDING MIN AND MAX-2
+            System.out.println("MAX IS ROW["+loop+"] is: " + max[loop]);
+            System.out.println("MIN IS COL["+loop+"] is: " + min[loop]);
+          }else{
+              System.out.println(" } "); //FOR INITILIZATION-1
+          }
+        }
+      //  System.out.println("MIN IN COL[4] is: " + min[4]);
+    }
+}

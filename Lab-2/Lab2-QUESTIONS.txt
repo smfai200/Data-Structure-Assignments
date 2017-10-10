@@ -1,0 +1,29 @@
+Q1. A box of cookies can hold 24 cookies, and a container can hold 75 boxes of cookies. Write a
+program that prompts the user to enter the total number of cookies, the number of cookies in a box, and
+the number of cookie boxes in a container. The program then outputs the number of boxes and the
+number of containers to ship the cookies. Note that each box must contain the specified number of
+cookies, and each container must contain the specified number of boxes. If the last box of cookies
+contains less than the number of specified cookies, you can discard it and output the number of leftover
+cookies. Similarly, if the last container contains less than the number of specified boxes, you can discard
+it and output the number of leftover boxes.
+Q2. Write a program which displays all prime numbers in the array given below:
+int x[10] = {87,19,13,85,27,11,33,53,69,71};
+Q3. Write a program in which one can insert an element at the location specified by the user.
+Numbers in Array: 10 20 30 40 50
+Enter location. 2
+The element to be inserted is: 99
+The out put look like as: 10 20 99 30 40 50
+Q4. Repeat the Q10 which used to delete a specific number in the array.
+Q5. Write an iterative function Power that takes in 2 integer value parameter base and
+exponent and return to the power of exponent. For example Power(2,3) returns 8. Make sure for
+every kind of validations.
+Q6 . Find out 2nd largest and 2nd smallest in the list.
+Q7. Write a program Array that display Fibonacci series of n number. For example if n=7 the
+generated output should look like:
+1 1 2 3 5 8 13 so on
+Q8. The population of a town A is less than the population of town B. However, the population of
+town A is growing faster than the population of town B. Write a program that prompts the user to enter
+the population and growth rate of each town. The program outputs after how many years the population of
+town A will be greater than or equal to the population of town B and the populations of both the towns at
+that time. (A sample input is: Population of town A 5000, growth rate of town A 4%, population of town
+B 8000, and growth rate of town B 2%)

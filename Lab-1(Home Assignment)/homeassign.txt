@@ -1,0 +1,89 @@
+package datastructure1;
+import java.io.*;
+
+public class DataStructure1 {
+
+    public static void main(String[] args) {
+        int array[][] = new int [5][5];
+        int sumofrow[] = {0,0,0,0,0};
+        int sumofcol[] = {0,0,0,0,0};
+        int largestrow[] = {0,0,0,0,0};
+        int secondlargerow[] = {0,0,0,0,0};
+        int largestcol[] = {0,0,0,0,0};
+        int secondlargecol[] = {0,0,0,0,0};
+        int smallestcol[] = {0,0,0,0,0};
+        int secondsmallcol[] = {0,0,0,0,0};
+        int smallestrow[] = {0,0,0,0,0};
+        int secondsmallrow[] = {0,0,0,0,0};
+        int loop=0, loop1=0;
+        
+    //Randomly Filling the Array
+        for (loop=0; loop<array.length;loop++){
+            System.out.print(" { ");
+            for (loop1=0; loop1<array[loop].length; loop1++){
+                array[loop][loop1] = (int) (Math.random()*100);
+                System.out.print(array[loop][loop1]+"\t");
+            }
+            System.out.print(" } "+"\n");
+        }
+        
+    //SUM OF EACH ROW AND COLUMN
+        for (loop=0; loop<array.length;loop++){
+       /*   largestrow[loop] = array[loop][0];
+            largestcol[loop] = array[0][loop];
+            System.out.println("LARGEST: "+largestrow[loop]);
+            System.out.println("SMALLEST: "+smallestrow[loop]); */
+         //   smallestrow[loop] = array[loop][0];
+            smallestrow[loop] = 100;
+            secondsmallrow[loop] = 100;
+            smallestcol[loop] = array[0][loop];
+            //ALGORITHM TO FIND SUM, SMALLEST, LARGEST AND SECOND of EACH
+            for (loop1=0; loop1<array[loop].length; loop1++){
+                sumofrow[loop] += array[loop][loop1];
+                sumofcol[loop] += array[loop1][loop];
+                if (array[loop][loop1] > largestrow[loop]){
+                    secondlargerow[loop] = largestrow[loop];
+                    largestrow[loop] = array[loop][loop1];
+                }else if (secondlargerow[loop] < array[loop][loop1]){
+                    secondlargerow[loop] = array[loop][loop1];
+                }
+                
+                if (array[loop][loop1] < smallestrow[loop]){
+                    secondsmallrow[loop] = smallestrow[loop];
+                    smallestrow[loop] = array[loop][loop1];
+                }else if (array[loop][loop1] < secondsmallrow[loop]){
+                    secondsmallrow[loop] = array[loop][loop1];
+                }
+                
+                if(array[loop1][loop] > largestcol[loop]){
+                    secondlargecol[loop] = largestcol[loop];
+                    largestcol[loop] = array[loop1][loop];
+                }else if (secondlargecol[loop] < array[loop1][loop]){
+                    secondlargecol[loop] = array[loop1][loop];
+                }
+                
+                if(array[loop1][loop] < smallestcol[loop]){
+                    secondsmallcol[loop] = smallestcol[loop];
+                    smallestcol[loop] = array[loop1][loop];
+                }else if (secondsmallcol[loop] > array[loop1][loop]){
+                    secondsmallcol[loop] = array[loop1][loop];
+                }
+                
+            }
+
+          System.out.println("Sum of Row["+loop+"] is: " + sumofrow[loop]);
+          System.out.println("Largest in Row["+loop+"] is: " + largestrow[loop]);
+          System.out.println("Second Largest in Row["+loop+"] is: " + secondlargerow[loop]);
+          System.out.println("Smallest in Row["+loop+"] is: " + smallestrow[loop]);
+          System.out.println("Second Smallest in Row["+loop+"] is: " + secondsmallrow[loop]);
+          System.out.println("======================================");
+          System.out.println("Sum of Column["+loop+"] is: " + sumofcol[loop]);
+          System.out.println("Largest in COL["+loop+"] is: " + largestcol[loop]);
+          System.out.println("Second Largest in COL["+loop+"] is: " + secondlargecol[loop]);
+          System.out.println("Smallest in COL["+loop+"] is: " + smallestcol[loop]);
+          System.out.println("Second Smallest in COL["+loop+"] is: " + secondsmallcol[loop]);
+          System.out.println("======================================");
+        } 
+        
+    }
+}

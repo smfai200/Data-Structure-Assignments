@@ -1,0 +1,45 @@
+package question7;
+//Write a program to display the prime numbers in 3x3 array
+
+public class Question7 {
+
+    public static void main(String[] args) {
+        int array[][] = new int[3][3];
+        int mnloop;
+        boolean check;
+        for (int loop=0; loop<array.length; loop++){
+         check = false;
+         mnloop = 0;
+         //Initialize the Array Randomly
+            for (int jloop=0; jloop <array[loop].length; jloop++){
+                array[loop][jloop] = (int) (10+Math.random()*100);
+                System.out.print(" " + array[loop][jloop]);
+            }
+            System.out.println();
+            //ALGO to find Prime Number!
+            for (int kloop=2; kloop<array[loop][mnloop]; kloop++){
+                if(array[loop][mnloop]%kloop == 0){
+                    System.out.println(" THE NUMBER["+ array[loop][mnloop] + "]"+ "IS NOT PRIME ");
+                    check = true;
+                }else if (array[loop][mnloop]== 1 || array[loop][mnloop] == 0){
+                    System.out.println(" THE NUMBER["+ array[loop][mnloop] + "]"+ "IS PRIME ");
+                    check = true;
+                }
+       //         System.out.println(" LOOP: " +mnloop + " " + array[loop][mnloop]+ "%" + kloop);
+                if(kloop == (array[loop][mnloop]-1) || check == true){
+                    if (check == false){
+                        System.out.println(" THE NUMBER["+ array[loop][mnloop] + "]"+ "IS PRIME!");
+                     }
+                    if (mnloop == 2){
+                        break;
+                    }
+                    kloop = 1; //k becomes 2 as loop increments it!
+                    mnloop++;
+                    check = false;
+                }
+            }
+            
+        }
+    }
+    
+}

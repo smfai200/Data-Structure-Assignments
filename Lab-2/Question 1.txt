@@ -1,0 +1,37 @@
+package datastructure2;
+import java.io.*;
+
+public class DataStructure2 {
+
+    public static void main(String[] args) throws IOException {
+        //box can hold 24 cookies | DONE
+        //75 boxes in a container | 
+        int cookiesinbox = 0;
+        int boxincontainer = 0;
+        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Enter the Number of Cookies: ");
+        int noofcookies = Integer.parseInt(input.readLine());
+        
+        System.out.println("Enter the Number of Cookies in a Boxes: ");
+        cookiesinbox = Integer.parseInt(input.readLine());
+        if(cookiesinbox > 24){
+            System.out.println("Cookies in Box can't be more than 24 ");
+        }else{
+            System.out.println("Enter the Number of Cookie Boxes in Container: ");
+            boxincontainer = Integer.parseInt(input.readLine());
+            if (boxincontainer>75){
+             System.out.println("Container can't contain more than 75 boxes");
+            }else{
+                 int totalboxes = noofcookies/cookiesinbox;
+                 int extracookies = noofcookies%cookiesinbox;
+                 int extrabox = 1;
+                 int totalcontainer = totalboxes/75;
+                 System.out.println("\n Total Number of Cookies: " + noofcookies);
+                 System.out.println("Number of Extra Cookies: " + extracookies);
+                 System.out.println("Number of Boxes: " + totalboxes);
+                 System.out.println("Number of Extra Boxes: " + extrabox);
+                 System.out.println("Number of Container To Ship: "+ totalcontainer);
+            }
+        }
+    
+}

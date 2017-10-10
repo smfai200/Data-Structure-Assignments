@@ -1,0 +1,42 @@
+package question8;
+import java.io.*;
+
+public class Question8 {
+
+    public static void main(String[] args) throws IOException{
+       BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+        int population[] = new int[2];
+        int growth[] = new int[2];
+        boolean check = false;
+        for(int i=0; i<population.length; i++){
+        System.out.println(" Enter Population of Town["+i+"] : ");
+        population[i] = Integer.parseInt(input.readLine());
+        System.out.println(" Enter Growth Rate of Town["+i+"] : ");
+        growth[i] = Integer.parseInt(input.readLine());
+           if (i==1){
+             if (population[0] > population[1]){
+               System.out.println("Population of Town A Can't be Greater than Town B!");
+               check = true;
+             }else if(growth[0] < growth[1]){
+              System.out.println("Population of Town A Should be Growing Faster than Town B");
+              check = true;
+             }  
+           }
+        }
+       if (check==false){
+        for (int j=0; j<1000 ;j++){
+            population[0] += (growth[0]*population[0]/100);
+            population[1] += (growth[1]*population[1]/100);
+            if(population[0] >= population[1]){
+                System.out.println("Population of Town A is Greater than Or Equal to Town B After " + j + " Years");
+                System.out.println("Population of Town A is: " + population[0]);
+                System.out.println("Population of Town B is: " + population[1]);
+                break;
+            }
+        }
+       }else{
+           
+       }
+    }
+    
+}

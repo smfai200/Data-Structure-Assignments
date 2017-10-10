@@ -1,0 +1,23 @@
+package primeinarray;
+
+public class PrimeinArray {
+
+    public static void main(String[] args) {
+        int x[] = {87,19,13,85,27,11,33,53,69,71};
+        boolean check;
+        for (int loop=0; loop < x.length; loop++){
+            check = false;
+            for (int loop1=2; loop1 < x[loop]; loop1++){
+                if (x[loop]%loop1 == 0){
+                    System.out.println("Not Prime Number!");
+                    check = true;
+                    break;
+                }
+            }
+            if (check == false){
+                System.out.println("Prime Number!");
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,37 @@
+package deletearray;
+
+import java.io.*;
+
+public class DeleteArray {
+
+    public static void main(String[] args) throws IOException {
+        int array[] = {10,20,30,40,50,0,0,0,0,0};
+        int loop = 0, swap;
+        int location = 0;
+        boolean check = false;
+        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+        while(loop < array.length){
+            System.out.print(array[loop] + "\t");
+            loop++;
+        }
+        
+        System.out.println("\n ENTER Number to Delete: ");
+        int num = Integer.parseInt(input.readLine());
+        for (loop=0; loop<array.length; loop++){
+            if(array[loop] == num){
+                array[loop] = array[loop+1];
+            //    array[loop+1] = 1;
+            check = true;
+            }else if(check==true && loop <(array.length-1)){
+                 array[loop] = array[loop+1];
+            }
+        }
+        
+        loop=0;
+        while(loop < array.length){
+            System.out.print(array[loop] + "\t");
+            loop++;
+        }
+    }
+    
+}

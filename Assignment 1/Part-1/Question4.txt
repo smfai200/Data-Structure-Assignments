@@ -1,0 +1,29 @@
+package question4;
+
+public class Question4 {
+
+    public static void main(String[] args) {
+        int array[][] = new int[5][5];
+        int sum[] = {0,0,0};
+        for (int loop=0; loop <array.length; loop++){
+            System.out.print("{ ");
+            for (int jloop=0; jloop <array[loop].length; jloop++){
+                array[loop][jloop] = (int)(1+Math.random()*100);
+                
+                if(loop == jloop){ //SUM OF DIAGNAL
+                    sum[0] += array[loop][jloop];
+                }else if(loop<jloop){ //SUM OF UPPER TRIANGLE
+                    sum[1] += array[loop][jloop];
+                }else{ //SUM OF LOWER DIAGNAL
+                    sum[2] += array[loop][jloop];
+                }
+                System.out.print(" " + array[loop][jloop]);
+            }
+            System.out.println(" }");
+        }
+        System.out.println("Sum of Diagnal is: " + sum[0]);
+        System.out.println("Sum of Upper Triangle is: " + sum[1]);
+        System.out.println("Sum of Lower Triangle is:  "+ sum[2]);
+    }
+    
+}

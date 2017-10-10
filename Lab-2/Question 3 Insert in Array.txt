@@ -1,0 +1,32 @@
+package insertinarray;
+import java.io.*;
+
+public class InsertinArray {
+
+    public static void main(String[] args) throws IOException {
+        int array[] = {10,20,30,40,50,0,0,0,0,0};
+        int loop = 0, swap;
+        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+        while(loop < array.length){
+            System.out.print(array[loop] + "\t");
+            loop++;
+        }
+        System.out.println("\n ENTER LOCATION: ");
+        int location = Integer.parseInt(input.readLine());
+        System.out.println(" ENTER ELEMENT TO INSERT: ");
+        int num = Integer.parseInt(input.readLine());
+        for (loop=(array.length-1); loop>=location; loop--){
+            if(array[loop] != 0){
+             //   swap = array[loop];
+                array[loop+1] = array[loop];
+            }
+        }
+        array[location] = num;
+        loop=0;
+        while(loop < array.length){
+            System.out.print(array[loop] + "\t");
+            loop++;
+        }
+    }
+    
+}

@@ -1,0 +1,74 @@
+package question5;
+
+public class Question5 {
+
+    public static void main(String[] args) {
+        int array[][] = new int[3][3];
+        int resultant[][] = new int[3][3];
+        int numsearch = 0;
+        int colchange = 0;
+        int loopcount = 0;
+        boolean check = false;
+        int location=0,location1=0;
+        Question5 obj = new Question5();
+        //Initialize the Array Randomly
+         for (int loop=0; loop<array.length; loop++){
+         System.out.print("[");
+            for (int jloop=0; jloop <array[loop].length; jloop++){
+                array[loop][jloop] = (int) (10+Math.random()*100);
+                System.out.print(" " + array[loop][jloop]);
+            }
+            System.out.println(" ]");
+         }
+         
+        while(loopcount<9){
+         for (int loop=0; loop<array.length; loop++){ //HANDLE COLUMNS
+             check = false;
+            for (int jloop=0; jloop < array[loop].length; jloop++){ //HANDLE ROWS
+                if(array[loop][jloop] < array[colchange][numsearch]){
+                    resultant[colchange][numsearch] = array[loop][jloop];
+                    location = loop;
+                    location1 = jloop;
+                    check = true;
+                }
+            }
+          }
+         
+         System.out.println(check);
+         if (check == false){
+             resultant[colchange][numsearch] = array[colchange][numsearch];
+         }else{
+             array[location][location1] = 0;
+             obj.arrayprintin(array, 1);
+         }
+         
+         numsearch++;
+         if(numsearch > 2){
+             colchange++;
+             numsearch = 0;
+         }
+         if (colchange > 2){
+             break;
+         }
+         
+         loopcount++;
+        }
+        
+        System.out.println(" RESULTANT: ");
+        obj.arrayprintin(resultant, 1); 
+         
+    }
+    public void arrayprintin(int arr[][],int count){
+        
+        for (int loop=0; loop<arr.length; loop++){
+         System.out.print("[");
+            for (int jloop=0; jloop <arr[loop].length; jloop++){
+                if(count==0){
+                    arr[loop][jloop] = (int) (10+Math.random()*100);
+                }
+                System.out.print(" " + arr[loop][jloop]);
+            }
+            System.out.println(" ]");
+         }
+    }
+}

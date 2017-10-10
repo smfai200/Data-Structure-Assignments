@@ -1,0 +1,24 @@
+package power;
+import java.io.*;
+
+public class Power {
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+        Power obj = new Power();
+        
+        System.out.println("\n ENTER Number: ");
+        int base = Integer.parseInt(input.readLine());
+        System.out.println("\n ENTER Power: ");
+        int power = Integer.parseInt(input.readLine());
+        System.out.println(base + " To Power of " + power + " is: " + obj.powerbase(base,power));
+    }
+    
+    public int powerbase(int base, int exponent){
+        int sum = base;
+        for (int i=1; i<exponent; i++){
+            sum *= base;
+        }
+        return  sum;
+    }
+}
