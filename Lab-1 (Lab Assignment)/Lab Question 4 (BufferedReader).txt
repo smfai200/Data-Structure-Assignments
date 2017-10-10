@@ -1,0 +1,66 @@
+package javaapplication4;
+import java.io.*;
+import java.util.Scanner;
+
+public class Book  {
+    private int bookid,pages;
+    private double price;
+    BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+    
+    //Takes Input
+    public void get() throws IOException{
+        System.out.println("Enter Bookid: ");
+        bookid = Integer.parseInt(input.readLine());
+        System.out.println("Enter pages of Book: ");
+        pages = Integer.parseInt(input.readLine());
+        System.out.println("Enter Price of Book: ");
+        price = Double.parseDouble(input.readLine());
+    }
+    //Show Data
+    public void show(){
+        System.out.println("\n ====================== " +
+                           "\n BOOK ID: " + this.bookid +
+                           "\n Pages: " + this.pages +
+                           "\n Price: " + this.getPrice() +
+                           "\n ====================== ");
+    }
+    //Sets Value from parameters
+    public void set(int id, int pages, double price){
+        bookid = id;
+        this.pages= pages;
+        this.price = price;
+    }
+    //Returns Price
+    public double getPrice(){
+        return this.price;
+    }
+
+    //MAIN
+    public static void main(String[] args) throws IOException {
+        Scanner input = new Scanner(System.in);
+        String choice;
+        Book obj[] = new Book[5];
+        for (int i=0; i<obj.length; i++){
+            obj[i] = new Book();
+            System.out.println("\n ===> BOOK NO: " + i + "\n");
+            obj[i].get();
+            obj[i].show();
+            System.out.println("Do You Want to Change Values? ");
+            choice = input.next();
+            //IF HE WANTS TO CHANGE IT!
+         if (choice.equalsIgnoreCase("yes")){
+             int bookid,pages;
+             double price;
+             System.out.println("Enter Bookid: ");
+             bookid = input.nextInt();
+             System.out.println("Enter pages of Book: ");
+             pages = input.nextInt();
+             System.out.println("Enter Price of Book: ");
+             price = input.nextDouble();
+             obj[i].set(bookid, pages, price);
+             obj[i].show();
+            }
+        }
+    }
+    
+}

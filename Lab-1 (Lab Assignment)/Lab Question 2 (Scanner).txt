@@ -1,0 +1,45 @@
+package javaapplication2;
+import java.util.Scanner;
+
+public class JavaApplication2 {
+    
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int first,second,result,choice;
+        //INPUT FROM USER
+        System.out.println("Enter first Number: ");
+        first = input.nextInt();
+        System.out.println("Enter second Number: ");
+        second = input.nextInt();
+        //CHOICE SELECTION
+        System.out.println("1. Addition (+).\n" +
+                           "2. Subtraction (-).\n" +
+                           "3. Multiplication (*).\n" +
+                           "4. Division (/).");
+        System.out.println("Enter Operation Number: ");
+        choice = input.nextInt();
+        switch(choice){
+            case 1:
+                result = first+second;
+                System.out.println("The Result is " + result);
+                break;
+            case 2:
+                result = first-second;
+                System.out.println("The Result is " + result);
+                break;
+            case 3:
+                result = first*second;
+                System.out.println("The Result is " + result);
+                break;
+            case 4:
+                result = first/second;
+                System.out.println("The Result is " + result);
+                break;
+            default:
+                System.out.println("You have Entered a Wrong Option!");
+                break;
+        }
+        
+    }    
+    
+}
