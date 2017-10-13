@@ -1,3 +1,7 @@
+//THIS IS PRACTICAL IMPLEMENTATION OF DOUBLE LINKED LIST MANUALLY IN JAVA INSTEAD OF USING LINKEDLIST LIBRARY
+//Default is missing in Cases, You can Add it for yourself, I only wanted to give you Implemented!
+//You are Free to Ask Anything that you get Confused With!
+//CLASS Objects are reference based, taking advantage of this Fact!
 import java.util.Scanner;
 
 class LinkedList{
