@@ -15,6 +15,7 @@ class MainClass{
 	static LinkedList last = null;
 	static Scanner input = new Scanner(System.in);
 	int flag = 0;
+	int nodecount=0;
 
 	public static void main(String args[]){
 		MainClass classobj = new MainClass();
@@ -68,6 +69,7 @@ class MainClass{
 
 //ADDING DATA IN NODE (MID,TOP,END)IMPLEMENTED
 	public void addnode(){
+		nodecount++;
 		System.out.print("\n WHERE DO YOU WANT TO ADD " +
 						   "\n 	  1. TOP " +
 						   "\n 	  2. MID " +
@@ -127,6 +129,7 @@ class MainClass{
 
  //PRINT DATA FROM NODE IN YOUR OWN CHOICE SEQUENCE
 	public void printnode(){
+		int count;
 		System.out.print("\n WHICH SEQUENCE DO YOU WANT TO PRINT DATA FROM NODE: " +
 						 "\n 	1. FIRST TO LAST" +
 						 "\n 	2. LAST TO FIRST" +
@@ -134,15 +137,19 @@ class MainClass{
 		int choice = input.nextInt();
 		if(choice == 1){
 			cur = first;
+			count=0;
 			while(cur != null){
-				System.out.println("Data: " + cur.data);
+				System.out.println("Data of Node["+count+"]: " + cur.data);
 				cur = cur.next;
+				count++;
 		    }
 		}else{
 			cur = last;
+			count = nodecount;
 			while(cur != null){
-				System.out.println("Data: " + cur.data);
+				System.out.println("Data of Node["+count+"]: " + cur.data);
 				cur = cur.back;
+				count--.;
 		    }
 	    }
 	}
