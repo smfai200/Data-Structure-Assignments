@@ -164,7 +164,7 @@ class ListImplement{
 		int choice = input.nextInt();
 		if(choice == 1){
 			cur = first;
-			count=0;
+			count = 0;
 			do{
 				System.out.println("Data of Node["+count+"]: " + cur.data);
 				cur = cur.next;
@@ -177,7 +177,7 @@ class ListImplement{
 				System.out.println("Data of Node["+count+"]: " + cur.data);
 				cur = cur.back;
 				count--;
-		    }while(cur != last);
+		    }while(cur != first.back);
 	    }
 	}
 //DELETE A NODE FROM THE LIST (TOP,MID,END) IMPLEMENTED
@@ -323,6 +323,7 @@ class ListImplement{
 				cur.back = pre;
 				cur.next = first;
 				pre = cur;
+				nodecount++;
 			}
 			last = cur;
 		}while(pre.data <= 1000);
