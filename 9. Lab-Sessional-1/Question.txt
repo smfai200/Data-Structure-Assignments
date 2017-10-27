@@ -1,0 +1,20 @@
+Question
+Write a program in Java using singly linked list which fulfill the following options by
+using the class below:
+class node{
+int emp_id;
+String emp_name;
+long int emp_sal;
+int emp_age;
+node *next;
+};
+Program may have the following options
+[1]. Creation of Linked List
+[2]. Edit specific record in the List
+[3]. Eliminate retired employees
+[4]. Bonus Facility
+[4]. Exit
+My choice:
+Retired employee criteria: if( emp_age>=60) then he/she must be retired.
+Bonus allowed to all employees those having salary>=50000)
+Bonus should be 20% of Salary!
