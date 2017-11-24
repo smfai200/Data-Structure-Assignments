@@ -8,8 +8,8 @@ public class DynamicStack {
     Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
         DynamicStack obj = new DynamicStack();
-        obj.push();
-        obj.pop();
+        obj.push(); //CHANGE ACCORDINGLY, MIGHT WANT TO ADD A MENU
+        obj.pop();  // MY GOAL IS TO GIVE THE CONCEPT ONLY!
     }
     
     public void push(){
