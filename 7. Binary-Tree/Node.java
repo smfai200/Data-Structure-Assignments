@@ -31,5 +31,15 @@ public class Node {
             }
         }
     }  
+    public void prefix(Node root, int option){
+        if(root == null){
+            
+        }else{
+            System.out.println(root.data);
+            prefix(root.left,option);
+            prefix(root.right,option);
+
+        }
+    }
 }
     
